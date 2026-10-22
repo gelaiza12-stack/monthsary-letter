@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+}
+
+/* LOGIN PAGE */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #f8e5df,
+        #f7d7df,
+        #f5ebe0
+    );
+}
+
+.login-box{
+    width:400px;
+    background:rgba(255,255,255,.75);
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.login-box h1{
+    font-family:'Great Vibes',cursive;
+    font-size:65px;
+    color:#d36d94;
+    margin-bottom:15px;
+}
+
+.login-box p{
+    color:#555;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:none;
+    outline:none;
+    border-radius:15px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    cursor:pointer;
+    border-radius:15px;
+    background:#ff6f91;
+    color:white;
+    font-size:16px;
+}
+
+button:hover{
+    background:#ff4d7a;
+}
+
+/* LETTER PAGE */
+
+#letterPage{
+    display:none;
+    min-height:100vh;
+    position:relative;
+    padding:60px 20px;
+}
+
+/* BACKGROUND PHOTOS */
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+}
+
+.background img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    opacity:0;
+
+    filter:
+    brightness(.95)
+    contrast(1.05);
+
+    animation:slideshow 30s infinite;
+}
+
+/* 6 PHOTOS */
+
+.background img:nth-child(1){
+    animation-delay:0s;
+}
+
+.background img:nth-child(2){
+    animation-delay:5s;
+}
+
+.background img:nth-child(3){
+    animation-delay:10s;
+}
+
+.background img:nth-child(4){
+    animation-delay:15s;
+}
+
+.background img:nth-child(5){
+    animation-delay:20s;
+}
+
+.background img:nth-child(6){
+    animation-delay:25s;
+}
+
+@keyframes slideshow{
+
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    5%{
+        opacity:.55;
+    }
+
+    14%{
+        opacity:.55;
+    }
+
+    18%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.05);
+    }
+
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.20);
+    z-index:-1;
+}
+
+/* LETTER */
+
+.letter{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+
+    background:rgba(20,20,20,.50);
+
+    padding:50px;
+
+    border-radius:30px;
+
+    color:white;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+    animation:showLetter 1.2s ease;
+}
+
+@keyframes showLetter{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.letter h1{
+    text-align:center;
+    font-family:'Great Vibes',cursive;
+    font-size:70px;
+    margin-bottom:30px;
+    color:white;
+}
+
+.letter p{
+    font-size:20px;
+    line-height:2.2;
+    text-align:justify;
+    color:white;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .login-box{
+        width:90%;
+    }
+
+    .letter{
+        padding:25px;
+    }
+
+    .letter h1{
+        font-size:45px;
+    }
+
+    .letter p{
+        font-size:16px;
+    }
+
+}
